@@ -14,9 +14,9 @@ public class PriceService {
     private BigDecimal priceDuck;
     @Value("${price.chicken}")
     private BigDecimal priceChicken;
-    @Value("{price.quial}")
+    @Value("${price.quial}")
     private BigDecimal priceQuial;
-    @Value("{price.turkey}")
+    @Value("${price.turkey}")
     private BigDecimal priceTurkey;
 
     private double saleFrom10to30Weight = 5;//persent
@@ -33,23 +33,23 @@ public class PriceService {
         }
         if (type.equals(TypeBird.TURKEY)) {
             if ((weight >= 10) && (weight < 30)) {
-                newPrice = priceChicken.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom10to30Weight / 100));
+                newPrice = priceTurkey.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom10to30Weight / 100));
             } else if (weight >= 50) {
-                newPrice = priceChicken.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom50Weight / 100));
+                newPrice = priceTurkey.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom50Weight / 100));
             }
         }
         if (type.equals(TypeBird.DUCK)) {
             if ((weight >= 10) && (weight < 30)) {
-                newPrice = priceChicken.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom10to30Weight / 100));
+                newPrice = priceDuck.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom10to30Weight / 100));
             } else if (weight >= 50) {
-                newPrice = priceChicken.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom50Weight / 100));
+                newPrice = priceDuck.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom50Weight / 100));
             }
         }
         if (type.equals(TypeBird.QUIAL)) {
             if ((weight >= 10) && (weight < 30)) {
-                newPrice = priceChicken.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom10to30Weight / 100));
+                newPrice = priceQuial.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom10to30Weight / 100));
             } else if (weight >= 50) {
-                newPrice = priceChicken.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom50Weight / 100));
+                newPrice = priceQuial.multiply(BigDecimal.valueOf(weight)).multiply(BigDecimal.valueOf(1 - saleFrom50Weight / 100));
             }
         }
         return newPrice;

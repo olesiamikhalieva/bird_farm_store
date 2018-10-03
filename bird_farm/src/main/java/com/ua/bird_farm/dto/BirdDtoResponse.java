@@ -17,6 +17,4 @@ public class BirdDtoResponse {
     private double weight;
     @JsonProperty
     private BigDecimal pricePerUnit;
-    @JsonProperty
-    private double totalWeight;
 }

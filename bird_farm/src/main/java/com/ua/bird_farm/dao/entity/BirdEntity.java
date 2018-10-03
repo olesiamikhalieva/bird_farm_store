@@ -14,7 +14,7 @@ import java.util.Date;
 @Getter
 @Entity
 @ToString
-@Table(name = "birds")
+@Table(name = "birds_statistic")
 public class BirdEntity {
     @Id
     @GeneratedValue
@@ -25,8 +25,6 @@ public class BirdEntity {
     private BigDecimal pricePerUnit;
     @Column
     private double weight;
-    @Column
-    private double TotalWeight;
     @Column
     private Date date;
 

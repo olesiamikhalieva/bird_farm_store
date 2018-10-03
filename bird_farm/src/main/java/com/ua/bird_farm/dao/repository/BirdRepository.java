@@ -11,7 +11,7 @@ import java.util.List;
 public interface BirdRepository extends JpaRepository<BirdEntity, Long> {
 
 
-    @Query("SELECT b, max (b.date)FROM BirdEntity b WHERE b.birdType=?1 group by b.id")
-    List<BirdEntity> findAllByMaxDateAndBirdType(String birdType);
+//    @Query("SELECT b, max (b.date)FROM BirdEntity b WHERE b.birdType=?1 group by b.id")
+//    List<BirdEntity> findAllByMaxDateAndBirdType(String birdType);
 
 }

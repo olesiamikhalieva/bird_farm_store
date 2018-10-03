@@ -74,8 +74,8 @@
     <schema id="16" parent="4" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-09-30.18:46:22.754</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1735</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-10-03.19:59:09.611</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1813</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -128,56 +128,90 @@
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
-    <table id="24" parent="16" name="birds">
-      <ObjectId>27323</ObjectId>
-      <StateNumber>1735</StateNumber>
+    <table id="24" parent="16" name="birds_farm">
+      <ObjectId>27387</ObjectId>
+      <StateNumber>1812</StateNumber>
     </table>
-    <column id="25" parent="24" name="id">
+    <table id="25" parent="16" name="birds_statistic">
+      <ObjectId>27392</ObjectId>
+      <StateNumber>1813</StateNumber>
+    </table>
+    <column id="26" parent="24" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1735</StateNumber>
+      <StateNumber>1812</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="26" parent="24" name="total_weight">
+    <column id="27" parent="24" name="total_weight">
       <Position>2</Position>
       <DataType>double precision|0s</DataType>
-      <StateNumber>1735</StateNumber>
+      <StateNumber>1812</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="27" parent="24" name="bird_type">
+    <column id="28" parent="24" name="bird_type">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1735</StateNumber>
+      <StateNumber>1812</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="28" parent="24" name="date">
-      <Position>4</Position>
-      <DataType>timestamp|0s</DataType>
-      <StateNumber>1735</StateNumber>
-      <TypeId>1114</TypeId>
-    </column>
     <column id="29" parent="24" name="price_per_unit">
-      <Position>5</Position>
+      <Position>4</Position>
       <DataType>numeric(19,2 digit)|0s</DataType>
-      <StateNumber>1735</StateNumber>
+      <StateNumber>1812</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="30" parent="24" name="weight">
-      <Position>6</Position>
-      <DataType>double precision|0s</DataType>
-      <StateNumber>1735</StateNumber>
-      <TypeId>701</TypeId>
-    </column>
-    <index id="31" parent="24" name="birds_pkey">
-      <ObjectId>27326</ObjectId>
+    <index id="30" parent="24" name="birds_farm_pkey">
+      <ObjectId>27390</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="32" parent="24" name="birds_pkey">
-      <ObjectId>27327</ObjectId>
+    <key id="31" parent="24" name="birds_farm_pkey">
+      <ObjectId>27391</ObjectId>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>birds_pkey</UnderlyingIndexName>
+      <UnderlyingIndexName>birds_farm_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1813</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="33" parent="25" name="bird_type">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1813</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="34" parent="25" name="date">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>1813</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="35" parent="25" name="price_per_unit">
+      <Position>4</Position>
+      <DataType>numeric(19,2 digit)|0s</DataType>
+      <StateNumber>1813</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="36" parent="25" name="weight">
+      <Position>5</Position>
+      <DataType>double precision|0s</DataType>
+      <StateNumber>1813</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <index id="37" parent="25" name="birds_statistic_pkey">
+      <ObjectId>27395</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="25" name="birds_statistic_pkey">
+      <ObjectId>27396</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>birds_statistic_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
   </database-model>
