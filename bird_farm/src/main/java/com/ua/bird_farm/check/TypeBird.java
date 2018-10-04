@@ -1,4 +1,4 @@
-package com.ua.bird_farm.dao.entity;
+package com.ua.bird_farm.check;
 
 import lombok.Getter;
 

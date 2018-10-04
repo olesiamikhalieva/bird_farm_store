@@ -2,20 +2,14 @@ package com.ua.bird_farm.services;
 
 
 import com.ua.bird_farm.dao.entity.BirdEntity;
-import com.ua.bird_farm.dao.entity.TypeBird;
 import com.ua.bird_farm.dao.repository.BirdRepository;
 import com.ua.bird_farm.dto.BirdDtoRequest;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Date;
 
-// priceDuck
-// for 10 kg - price not change
-// from 10 to 30 - price = price -1 per unit;
-// from 30 to 50 - price = price -2 per unit;
 @Service
 @Transactional(noRollbackFor = Exception.class)
 @Log4j2

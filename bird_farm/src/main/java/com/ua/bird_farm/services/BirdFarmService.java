@@ -1,8 +1,7 @@
 package com.ua.bird_farm.services;
 
-import com.ua.bird_farm.dao.entity.BirdEntity;
 import com.ua.bird_farm.dao.entity.BirdFarmEntity;
-import com.ua.bird_farm.dao.entity.TypeBird;
+import com.ua.bird_farm.check.TypeBird;
 import com.ua.bird_farm.dao.repository.BirdFarmRepository;
 import com.ua.bird_farm.dto.BirdDtoRequest;
 import com.ua.bird_farm.dto.BirdDtoResponse;

@@ -1,36 +1,36 @@
 package com.ua.bird_farm.controller;
 
-
-import com.ua.bird_farm.dao.entity.BirdFarmEntity;
 import com.ua.bird_farm.dto.BirdDtoRequest;
-import com.ua.bird_farm.dto.BirdDtoResponse;
 import com.ua.bird_farm.services.BirdFarmService;
-import com.ua.bird_farm.services.BirdService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
+import java.io.IOException;
 
-@RestController()
-@RequestMapping("/bird")
+@Controller
 @Log4j2
+@RequestMapping("/bird")
 public class BirdController {
-    @Autowired
-    private BirdFarmService birdFarmService;
+        @Autowired
+        private BirdFarmService birdFarmService;
 
-    @GetMapping("get")
-    public List<BirdDtoResponse> getAllBirds() {
-        return birdFarmService.getAllBirdsDtoFromBirdsFarmTable();
+        @GetMapping("/all")
+        public String mainMethod(Model model) {
+            log.info("in controller");
+            model.addAttribute("birdList", birdFarmService.getAllBirdsDtoFromBirdsFarmTable());
+            return "index";
+        }
+
+        @RequestMapping("/add")
+        public String addBird(@ModelAttribute("bird") BirdDtoRequest birdDtoRequest) {
+                birdFarmService.addBirdDtoRequestToDB(birdDtoRequest);
+                 log.info(birdDtoRequest.toString());
+                return "redirect:/bird/all";
+
     }
-
-    @PostMapping("post")
-    public String postAllBirds(@RequestBody BirdDtoRequest birdDtoRequest){
-        birdFarmService.addBirdDtoRequestToDB(birdDtoRequest);
-        return  "ok";
-    }
-
-
-
-
 }

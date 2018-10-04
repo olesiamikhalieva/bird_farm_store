@@ -1,6 +1,6 @@
 package com.ua.bird_farm.services;
 
-import com.ua.bird_farm.dao.entity.TypeBird;
+import com.ua.bird_farm.check.TypeBird;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.math.BigDecimal;
@@ -18,6 +18,9 @@ public class PriceService {
     private BigDecimal priceQuial;
     @Value("${price.turkey}")
     private BigDecimal priceTurkey;
+    @Value("${price.surcharge}")
+    private double priceSurchargePerUnit;
+
 
     private double saleFrom10to30Weight = 5;//persent
     private double saleFrom50Weight = 10;//persent
@@ -54,4 +57,5 @@ public class PriceService {
         }
         return newPrice;
     }
+
 }
